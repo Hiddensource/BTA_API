@@ -30,7 +30,7 @@ app.use(bodyParser.json())
 // define a simple route
 app.get('/', (req, res) => {
 
-    res.json({"message": "Welcome to Node Application"});
+    res.json({"message": "Welcome to Node Application of bta"});
 });
 
 // Require Notes routes
@@ -38,5 +38,5 @@ require('./app/routes/note.routes.js')(app);
 
 // listen for requests
 app.listen(9900, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port 9900");
 });
