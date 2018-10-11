@@ -135,7 +135,7 @@ exports.getBus = (req, res) => {
 
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
-            console.log("requested",this.status);
+            console.log("requested",this.readyState,this.status);
             if (this.readyState == 4 && this.status == 200) {
                 console.log("goibibo");
                 displayUserInfo(request.responseText);
