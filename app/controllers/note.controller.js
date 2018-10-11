@@ -129,12 +129,13 @@ exports.getBus = (req, res) => {
     var source = req.body.source;
     var destination = req.body.destination;
     var ddate = req.body.ddate;
-    var url = "http://developer.goibibo.com/api/bus/search/?app_id=045ea148&app_key=3e449f37d35d060398943020050fcee5&format=json&source=" + source + "&destination=" + destination + "&dateofdeparture=" + ddate + " ";
+    var url = "http://developer.goibibo.com/api/bus/search/?app_id=045ea148&app_key=3e449f37d35d060398943020050fcee5&format=json&source=" + source + "&destination=" + destination + "&dateofdeparture=" + ddate + "";
 
-  
+    console.log("url created" , url);
 
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
+            console.log("requested",this.status);
             if (this.readyState == 4 && this.status == 200) {
                 console.log("goibibo");
                 displayUserInfo(request.responseText);
