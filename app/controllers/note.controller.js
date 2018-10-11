@@ -125,12 +125,13 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 
 exports.getBus = (req, res) => {
+    console.log("in function");
     var source = req.body.source;
     var destination = req.body.destination;
     var ddate = req.body.ddate;
     var url = "http://developer.goibibo.com/api/bus/search/?app_id=045ea148&app_key=3e449f37d35d060398943020050fcee5&format=json&source=" + source + "&destination=" + destination + "&dateofdeparture=" + ddate + " ";
 
-    function getUserDetails() {
+  
 
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
@@ -140,7 +141,7 @@ exports.getBus = (req, res) => {
         };
         request.open("GET", url, true);
         request.send();
-    }
+    
 
 
     var Detail = [];
@@ -246,6 +247,6 @@ exports.getBus = (req, res) => {
             res.send("error");
         }
     }
-    getUserDetails();
+   
 
 };
