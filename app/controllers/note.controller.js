@@ -243,7 +243,7 @@ exports.getBus = (req, res) => {
                 Detail.push(obj);
             }
 
-            res.send( Detail );
+            res.send( {Detail} );
             console.log("send");
         } else {
             res.send("error");
