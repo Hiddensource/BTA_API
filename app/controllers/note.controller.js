@@ -136,6 +136,7 @@ exports.getBus = (req, res) => {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                console.log("goibibo");
                 displayUserInfo(request.responseText);
             }
         };
@@ -147,11 +148,12 @@ exports.getBus = (req, res) => {
     var Detail = [];
 
     function displayUserInfo(response) {
-
+        console.log("goibibo function");
         var val = "";
         var data = JSON.parse(response);
 
         if (data.data != null) {
+            console.log("all done");
             for (var i = 0; i < data.data.onwardflights.length; i++) {
 
                 val = data.data.onwardflights[i].origin;
@@ -241,7 +243,7 @@ exports.getBus = (req, res) => {
                 Detail.push(obj);
             }
 
-            res.send({ Detail });
+            res.send( Detail );
             console.log("send");
         } else {
             res.send("error");
