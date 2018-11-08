@@ -16,8 +16,7 @@ aggregator = async (userRequest , busAggName , busAggregator)=>{
     
  const detail =await providerHandler[busAggName](userRequest,busAggregator);
 
-// console.log(detail);
-// console.log(detail);
+
 return detail;
 }
 

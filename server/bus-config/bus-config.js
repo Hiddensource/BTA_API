@@ -14,9 +14,9 @@ providerConfig = async (userRequest) => {
 
 
     const busAggregators = await BusAggregator.find();
-   
+
     // busAggregators.forEach(async (busAggregator) => {
-   
+
     //     aggregator =  busAggregator.busAggName;
     //     const detail = await provider.aggregator(userRequest, aggregator, busAggregator);
     //     // console.log(detail);
@@ -24,8 +24,8 @@ providerConfig = async (userRequest) => {
 
 
     // });
-   
-    for(i=0;i<busAggregators.length;i++){
+
+    for (let i = 0; i < busAggregators.length; i++) {
         aggregator = busAggregators[i].busAggName;
         const detail = await provider.aggregator(userRequest, aggregator, busAggregators[i]);
         Details.push(detail);

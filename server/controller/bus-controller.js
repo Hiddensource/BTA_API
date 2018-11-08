@@ -9,8 +9,7 @@ getBusData = (req, res) => {
     }
 
     busConfig.providerConfig(userRequest).then((Detail)=>{res.send({Detail});});
-    
-    // res.send("Detail");
+  
 
 }
 
