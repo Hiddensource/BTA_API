@@ -37,6 +37,6 @@ app.get('/', (req, res) => {
 require('./app/routes/note.routes.js')(app);
 
 // listen for requests
-app.listen(900, () => {
+app.listen(9100, () => {
     console.log("Server is listening on port 9900");
 });
